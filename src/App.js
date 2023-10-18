@@ -1,5 +1,5 @@
-import "./store";
-import "./styles.css";
+//import "../store";
+//import "./styles.css";
 import MoviePlaylist from "./components/MoviePlaylist";
 import SongPlaylist from "./components/SongPlaylist";
 import { useDispatch } from "react-redux";
