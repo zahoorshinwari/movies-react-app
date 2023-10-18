@@ -1,23 +1,13 @@
-import { configureStore, createSlice } from "@reduxjs/toolkit";
+import { faker } from "@faker-js/faker/locale/en";
 
-const songSlice = createSlice({
-  name: "song",
-  initialState: [],
-  reducers: {
-    addSong(state, action) {
-      state.push(action.payload);
-    },
-    removeSong(state, action) {
-      //
-    }
-  }
-});
+// This file has nothing to do with Redux
+// It exports functions that create random
+// movies and song
 
-// store is the object that has all of our state of our application
-const store = configureStore({
-  reducer: {
-    songs: songSlice.reducer
-  }
-});
+export const createRandomMovie = () => {
+  return `${faker.word.adjective()} ${faker.word.noun()}`;
+};
 
-console.log(store);
+export const createRandomSong = () => {
+  return faker.music.songName();
+};
