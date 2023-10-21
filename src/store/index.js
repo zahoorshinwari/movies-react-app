@@ -2,6 +2,10 @@ import { configureStore, createSlice, createAction } from "@reduxjs/toolkit";
 
 export const reset = createAction("app/reset");
 
+
+// slices can define the initial state
+// combine the small reducers function into the big reducer
+// create a set of action creator function
 const moviesSlice = createSlice({
   name: "movies",
   initialState: [],
@@ -50,6 +54,11 @@ const songSlice = createSlice({
   }
 });
 
+
+
+
+
+
 // store is the object that has all of our state of our application
 const store = configureStore({
   reducer: {
@@ -66,11 +75,38 @@ const store = configureStore({
   }
 });
 
+
+// export the store that we can use it in other components 
 export { store };
 
 // this is action creator
+// the songSlice.actions can take all the reducer actions
+// reducer actions means updating the state
+// songSlice.actions can access all of the reducer action 
 export const { addSong, removeSong } = songSlice.actions;
 export const { addMovie, removeMovie } = moviesSlice.actions;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // it can show us the exact reducer and their type
 // and also the payload
@@ -84,3 +120,39 @@ export const { addMovie, removeMovie } = moviesSlice.actions;
 
 // const finalState = store.getState();
 // console.log(JSON.stringify(finalState));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// REDUX:
+// redux is the javscript library which is used for the state management.
+
+// redux can work same like the useReducer
+
+// in redux there is also action , dispatch fuction, reducer , and the new state.
+// In redux there is the redux store which has dispatch function,  action,reducer,and new state.
+// there is multiple reducer in it
