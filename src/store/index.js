@@ -40,10 +40,14 @@ const songSlice = createSlice({
       // by this reducer
       state.push(action.payload);
     },
+
+    
     // 'song' + '/' + 'removeSong' = 'song/removeSong'
     removeSong(state, action) {
       // action.payload === string, the song we want to remove
       const index = state.indexOf(action.payload);
+      
+      // splice is built in function that remove the object from an array
       state.splice(index, 1);
     }
   },
@@ -156,3 +160,19 @@ export const { addMovie, removeMovie } = moviesSlice.actions;
 // in redux there is also action , dispatch fuction, reducer , and the new state.
 // In redux there is the redux store which has dispatch function,  action,reducer,and new state.
 // there is multiple reducer in it
+
+
+
+
+
+
+
+
+// changing state using redux 
+// the below are the steps that they follow:
+// 1) add a reducer to one of your slices that changes state in some particular way
+// 2) export the action creator that the slice automatically creates
+// 3) find the component that you want to dispatch from
+// 4) import the action creator function and 'useDispatch' from react redux
+// 5) call the useDispatch hook to get access to the dispatch function
+// 6) when the user does something, call the action creator to get an action, then dispatch it 
